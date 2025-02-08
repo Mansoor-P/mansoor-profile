@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router";
-import Footer from "../Footer";
 const Resume = () => {
   return (
     <section className="mt-10">
@@ -130,7 +129,7 @@ const Resume = () => {
               📌 GATE CSE 2025 Aspirant
             </h3>
             <p className="mt-2 text-gray-700">
-              Preparing for <span className="font-semibold">GATE CSE 2025</span>{" "}
+              {"-> "}<span className="font-semibold">GATE CSE 2025</span>{" "}
               with a focus on{" "}
               <span className="font-semibold">
                 Data Structures, Algorithms, Operating Systems, DBMS, Computer
@@ -260,7 +259,6 @@ const Resume = () => {
           </ul>
         </section>
       </div>
-      <Footer />
     </section>
   );
 };

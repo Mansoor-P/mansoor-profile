@@ -9,7 +9,8 @@ const ProjectCard = ({ name, description, link }) => {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-500 font-semibold mt-3 inline-block"
+        className="text-blue-500 font-semibold mt-3 inline-block transition-transform transform hover:scale-105"
+        aria-label={`Learn more about ${name}`}
       >
         Learn more →
       </a>

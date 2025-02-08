@@ -1,16 +1,18 @@
 import React from "react";
-import { FaFileDownload } from "react-icons/fa"; // Import FontAwesome icon
+import { FaFileDownload } from "react-icons/fa";
+
+import { RiPagesLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+
 const Resume = () => {
   return (
-    <div className="flex justify-center items-center mt-4">
-      <Link to={"/resume"}>
-        <a
-          className="text-3xl flex items-center gap-2 border border-black rounded-xl p-3 
-        backdrop-blur-md bg-white/30 transition-transform duration-300 cursor-pointer hover:scale-110"
-        >
-          Resume <FaFileDownload />
-        </a>
+    <div className="animate-pulse flex justify-center items-center mt-2">
+      <Link
+        to="/resume"
+        className="text-3xl bg-purple-200 text-purple-700 flex items-center gap-2  rounded-full p-2 px-4 
+        backdrop-blur-md cursor-pointer hover:scale-110 hover:bg-white border border-purple-500"
+      >
+        Resume <RiPagesLine />
       </Link>
     </div>
   );
