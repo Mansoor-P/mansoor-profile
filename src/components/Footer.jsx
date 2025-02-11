@@ -1,10 +1,9 @@
-import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="mt-10 border-t-1 border-gray-600 text-center text-gray-500 p-6">
+    <footer className="mt-10 border-t-1 border-gray-400 text-center text-gray-500 p-6">
       <div className="flex justify-center space-x-6 text-2xl">
         <motion.a
           href="https://github.com/yourgithub"

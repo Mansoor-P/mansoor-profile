@@ -1,7 +1,7 @@
 import React from "react";
 import mansoorImage from "../assets/mansoor.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import SocialLinks from "../components/SocialLinks";
+import SocialLinks from "../components/reUsableComponents/SocialLinks";
 
 const About = () => {
   return (

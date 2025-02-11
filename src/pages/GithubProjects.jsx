@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectCard from "../components/ProjectCard";
-import { projects } from "../data/projects"; // ✅ Import JSON-like array
+import ProjectCard from "../components/projects/ProjectCard";
+import { projects } from "../data/projects";
 
 const GithubProjects = () => {
   return (

@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Blog from "./components/Blog";
+import Blog from "./components/blog/Blog";
 import GithubProjects from "./pages/GithubProjects";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import BlogDetails from "./pages/BlogDetails";
-import ResumeComponent from "./components/Resume/ResumeComponent";
+import ResumePage from "./pages/ResumePage";
 import Footer from "./components/Footer";
 
 import { FaArrowUp } from "react-icons/fa";
@@ -26,8 +26,7 @@ function App() {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:slug" element={<BlogDetails />} />
         <Route path="/github-projects" element={<GithubProjects />} />
-
-        <Route path="/resume" element={<ResumeComponent />} />
+        <Route path="/resume" element={<ResumePage />} />
       </Routes>
       <div
         className="fixed bottom-4 right-4 border text-purple-600 rounded-full p-3 

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import { motion, AnimatePresence } from "framer-motion";
+
 import mansoorImage from "../assets/mansoor.jpg";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,17 +14,7 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center bg-white/10 backdrop-blur-lg border-b border-gray-400 border-dotted z-50">
         {/* Logo */}
-        {/* <NavLink to="/" className="flex items-center">
-          <motion.span
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="font-sora text-4xl font-bold text-gray-900"
-          >
-            Mansoor
-          </motion.span>
-        </NavLink> */}
         <NavLink to="/" className="flex items-center">
-          {/* Profile Image with Hover Effect */}
           <motion.img
             src={mansoorImage}
             alt="Profile"
@@ -29,7 +22,7 @@ const Navbar = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileHover={{ scale: 1.1 }}
           />{" "}
           <div className="relative group inline-block">
             <span
@@ -46,7 +39,7 @@ const Navbar = () => {
                  w-64 bg-indigo-300 text-indigo-800 text-sm px-3 py-1 rounded-md 
                   opacity-0 group-hover:opacity-100 transition-all duration-300"
             >
-              Hey, I'm Mansoor! Thank You For  Visiting My Portfolio.😍
+              Hey, I'm Mansoor! Thank You For Visiting My Portfolio.😍
             </div>
           </div>
         </NavLink>

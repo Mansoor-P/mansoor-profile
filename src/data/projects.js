@@ -1,5 +1,17 @@
 export const projects = [
   {
+    name: "job-search-and-application-platform",
+    description:
+      "A job searching and application platform built with Java, Spring Boot, and microservices. It includes job postings, applications, reviews, and authentication with JWT.",
+    link: "https://github.com/example/job-search-and-application-platform",
+  },
+  {
+    name: "mern-shopping-app",
+    description:
+      "A full-stack shopping application built with MERN stack, featuring JWT-based authentication, product management, cart functionality, and a seamless user experience.",
+    link: "https://github.com/example/mern-shopping-app",
+  },
+  {
     name: "food-delivery-microservices",
     description:
       "A practical and imaginary food and grocery delivery microservices, built with .Net 8, MassTransit, Domain-Driven Design, CQRS, Vertical Slice Architecture, Event-Driven Architecture, and the latest technologies.",
