@@ -93,7 +93,7 @@ const BlogDetails = () => {
   };
 
   return (
-    <div className="mt-16 max-w-4xl mx-auto px-4">
+    <div className="mt-20 max-w-4xl mx-auto px-4">
       {/* Back Button */}
       <div className="p-4">
         <Link

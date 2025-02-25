@@ -1,10 +1,10 @@
 import React from "react";
-import ProjectCard from "../components/projects/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
 const GithubProjects = () => {
   return (
-    <section className="mt-20 min-h-screen px-6 max-w-6xl mx-auto">
+    <section className="mt-24 min-h-screen px-6 max-w-6xl mx-auto">
       {/* Title */}
       <h1 className="text-5xl font-bold text-gray-900 mb-8 text-center">
         GitHub Projects

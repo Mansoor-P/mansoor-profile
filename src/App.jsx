@@ -1,46 +1,36 @@
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
 import Home from "./pages/Home";
-import Blog from "./components/blog/Blog";
-import GithubProjects from "./pages/GithubProjects";
 import About from "./pages/About";
-import Navbar from "./components/Navbar";
+import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
+import GithubProjects from "./pages/GithubProjects";
 import ResumePage from "./pages/ResumePage";
+import NotFound from "./pages/NotFound";
+
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import { FaArrowUp } from "react-icons/fa";
-
-function App() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const App = () => {
   return (
-    <section
-      className="p-6 min-h-screen bg-gradient-to-tr from-purple-80 via-blue-100 to-green-80 
-                h-full w-full rounded-b-lg"
-    >
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blogs/:slug" element={<BlogDetails />} />
-        <Route path="/github-projects" element={<GithubProjects />} />
-        <Route path="/resume" element={<ResumePage />} />
-      </Routes>
-      <div
-        className="fixed bottom-4 right-4 border text-purple-600 rounded-full p-3 
-                 animate-bounce cursor-pointer hover:bg-purple-50 shadow-lg"
-        onClick={scrollToTop}
-      >
-        <span className="text-2xl">
-          <FaArrowUp />
-        </span>
-      </div>
+      <ScrollToTop />
 
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/:slug" element={<BlogDetails />} />
+          <Route path="/github-projects" element={<GithubProjects />} />
+          <Route path="/resume" element={<ResumePage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
-    </section>
+    </div>
   );
-}
+};
 
 export default App;

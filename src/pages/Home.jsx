@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
-import Blog from "../components/blog/Blog";
+import Blog from "./Blog";
 
 const Home = () => {
   return (

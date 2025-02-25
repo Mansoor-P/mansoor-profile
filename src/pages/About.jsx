@@ -1,13 +1,12 @@
 import React from "react";
 import mansoorImage from "../assets/mansoor.jpg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import SocialLinks from "../components/reUsableComponents/SocialLinks";
+import SocialLinks from "../components/SocialLinks";
 
 const About = () => {
   return (
-    <section className="max-w-5xl mx-auto mt-6 px-6 py-12">
+    <section className="max-w-5xl mx-auto mt-16 px-6 py-12">
       <h1 className="text-5xl font-bold text-gray-900 text-center lg:text-left">
-        About
+        About Me
       </h1>
       <div className="mt-6 border-t border-gray-300"></div>
 
@@ -21,29 +20,53 @@ const About = () => {
             className="w-48 h-48 object-cover rounded-full border-4 border-gray-300 shadow-lg"
           />
           <h2 className="text-2xl font-semibold mt-4">Mansoor Pathikonda</h2>
-          <p className="text-lg text-gray-500">Aspiring Software Engineer</p>
+          <p className="text-lg text-gray-500">
+            Software Developer | Java | Spring Boot | Microservices
+          </p>
           <SocialLinks />
         </div>
 
         {/* Right Section - Description */}
         <div className="lg:w-2/3 text-gray-700 text-lg leading-relaxed text-justify">
           <p>
-            I'm Mansoor, a software engineer specializing in backend development
-            and distributed systems. I have a strong foundation in designing and
-            building scalable, resilient, and maintainable applications using
+            I am a passionate and results-driven{" "}
             <span className="font-semibold text-gray-900">
-              {" "}
-              Java, Spring Boot, and microservices architecture.
+              Software Developer
+            </span>{" "}
+            specializing in backend development, microservices architecture, and
+            cloud-native applications. My expertise includes designing and
+            building scalable, high-performance systems using{" "}
+            <span className="font-semibold text-gray-900">
+              Java, Spring Boot, and RESTful APIs.
             </span>
           </p>
+
           <p className="mt-4">
-            My interests include{" "}
+            My technical proficiency spans{" "}
             <span className="font-semibold">
-              system design, software architecture, domain-driven design (DDD),
-              event-driven systems, and DevOps.
-            </span>{" "}
-            I love learning, sharing knowledge, and solving complex challenges.
-            Additionally, I am an open-source enthusiast.
+              System Design, Microservices Architectures.
+            </span>
+            I have hands-on experience working with databases like{" "}
+            <span className="font-semibold">
+              MySQL, PostgreSQL, and MongoDB
+            </span>
+            , as well as containerization and orchestration tools such as{" "}
+            <span className="font-semibold">Docker and Kubernetes.</span>
+          </p>
+
+          <p className="mt-4">
+            I am deeply interested in{" "}
+            <span className="font-semibold">
+              distributed systems, cloud computing, DevOps practices, and
+              scalable backend solutions.
+            </span>
+            I actively engage in open-source projects and continuously explore
+            emerging technologies to enhance software development best
+            practices.
+          </p>
+
+          <p className="mt-4">
+            Let's connect and collaborate on innovative solutions!
           </p>
         </div>
       </div>
