@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import mansoorImage from "../assets/mansoor.jpg";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -17,25 +17,25 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center bg-white/10 backdrop-blur-lg border-b border-gray-400 border-dotted z-50">
+    <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center bg-white/10 dark:bg-gray-900/70 backdrop-blur-lg border-b border-gray-400 dark:border-gray-700 border-dotted z-50">
       {/* Logo */}
-      <NavLink to="/" className="flex items-center">
+      <NavLink to="/" className="flex items-center space-x-2">
         <motion.img
           src={mansoorImage}
           alt="Profile"
-          className="w-14 h-14 rounded-full shadow-lg"
+          className="w-12 h-12 rounded-full shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
         />
-        <span className="ml-2 bg-indigo-200 text-indigo-700 px-4 rounded-full cursor-pointer hover:border hover:border-indigo-700 hover:bg-white/10">
+        <span className="text-lg font-semibold bg-indigo-200 dark:bg-indigo-700 text-indigo-700 dark:text-white px-4 py-1 rounded-full transition-all duration-300 hover:bg-white/10 hover:border hover:border-indigo-700">
           Mansoor Pathikonda
         </span>
       </NavLink>
 
       {/* Desktop Navbar */}
-      <div className="hidden md:flex items-center space-x-6">
-        <ul className="flex space-x-6 text-2xl">
+      <div className="hidden md:flex items-center space-x-8">
+        <ul className="flex space-x-6 text-lg font-medium">
           {navLinks.map(({ name, path }) => (
             <li key={path}>
               <NavLink
@@ -53,12 +53,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {/* Theme Toggle Button (Now with Icon) */}
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </div>
-
-      {/* Mobile Menu Button */}
-      <button className="md:hidden text-3xl" onClick={toggleMenu}>
+      <button
+        className="md:hidden text-3xl text-gray-800 dark:text-white"
+        onClick={toggleMenu}
+      >
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
@@ -69,8 +69,8 @@ const Navbar = () => {
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
-            transition={{ duration: 0.5 }}
-            className="fixed top-0 left-0 w-3/4 h-screen bg-white flex flex-col items-center justify-center space-y-6 text-2xl font-semibold shadow-lg md:hidden"
+            transition={{ duration: 0.4 }}
+            className="fixed top-0 left-0 w-3/4 h-screen bg-white dark:bg-gray-900 shadow-lg flex flex-col items-center justify-center space-y-6 text-xl font-semibold md:hidden"
           >
             {navLinks.map(({ name, path }) => (
               <NavLink
@@ -82,8 +82,7 @@ const Navbar = () => {
                 {name}
               </NavLink>
             ))}
-            {/* Theme Toggle Button in Mobile Menu */}
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </motion.div>
         )}
       </AnimatePresence>
