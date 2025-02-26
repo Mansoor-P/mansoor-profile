@@ -1,77 +1,45 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { projects } from "../data/projects";
-
-const ITEMS_PER_PAGE = 4;
 
 const GithubProjects = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const selectedProjects = projects.slice(
-    startIndex,
-    startIndex + ITEMS_PER_PAGE
-  );
+  useEffect(() => {
+    fetch("http://localhost:5000/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(Array.isArray(data) ? data : []); // Ensure it's an array
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Fetch Error:", err);
+        setProjects([]); // Prevent undefined issues
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <section className="mt-24 min-h-screen px-6 max-w-6xl mx-auto">
-      {/* Title */}
       <h1 className="text-5xl font-bold text-gray-900 mb-8 text-center">
         GitHub Projects
       </h1>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        {selectedProjects.length > 0 ? (
-          selectedProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              name={project.name}
-              description={project.description}
-              link={project.link}
-              image={project.image}
-            />
-          ))
-        ) : (
-          <p className="text-center text-gray-500 text-lg">
-            No projects available.
-          </p>
-        )}
-      </div>
-
-      {/* Pagination Controls */}
-      <div className="flex justify-center items-center mt-8 space-x-4">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md disabled:opacity-50"
-        >
-          {"<"}
-        </button>
-        <span className="text-lg font-medium">
-          {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md disabled:opacity-50"
-        >
-          {">"}
-        </button>
-      </div>
+      {loading ? (
+        <p className="text-center text-gray-500 text-lg">Loading projects...</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {projects.length > 0 ? (
+            projects.map((project) => (
+              <ProjectCard key={project._id} {...project} />
+            ))
+          ) : (
+            <p className="text-center text-gray-500 text-lg">
+              No projects available.
+            </p>
+          )}
+        </div>
+      )}
     </section>
   );
 };
