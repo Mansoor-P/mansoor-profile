@@ -1,6 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+import dotenv from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import projectRoutes from "./routes/projects.js";
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 
@@ -10,15 +15,14 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/projectsdb", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
-// Import routes
-const projectRoutes = require("./routes/projects");
+// Routes
 app.use("/", projectRoutes);
 
 const PORT = process.env.PORT || 5000;

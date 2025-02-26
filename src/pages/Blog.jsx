@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import blogs from "../data/blogsData";
 
 // Blog Component
 const Blog = () => {
-
   return (
     <div className="mt-20 max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
       <motion.h1
@@ -47,19 +47,18 @@ const BlogCard = ({ blog, isFeatured }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div
-        className={`text-white text-center py-${
-          isFeatured ? "40 sm:py-48" : "12"
-        } 
-          ${
-            isFeatured
-              ? "bg-gradient-to-r from-blue-500 to-purple-600"
-              : "bg-gradient-to-r from-pink-500 to-purple-500"
-          }`}
+        className={`text-white text-center ${
+          isFeatured ? "py-40 sm:py-48" : "py-12"
+        } ${
+          isFeatured
+            ? "bg-gradient-to-r from-blue-500 to-purple-600"
+            : "bg-gradient-to-r from-pink-500 to-purple-500"
+        }`}
       >
         <h2
-          className={`${
+          className={`font-bold ${
             isFeatured ? "text-3xl md:text-5xl" : "text-xl md:text-2xl"
-          } font-bold`}
+          }`}
         >
           {blog.title}
         </h2>
@@ -87,6 +86,20 @@ const BlogCard = ({ blog, isFeatured }) => {
       </div>
     </motion.div>
   );
+};
+
+// PropTypes Validation
+BlogCard.propTypes = {
+  blog: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    authorImg: PropTypes.string,
+    date: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+  isFeatured: PropTypes.bool,
 };
 
 export default Blog;

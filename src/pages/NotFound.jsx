@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="flex flex-col items-center justify-center h-screen text-center px-4">
       <motion.h1
         className="text-6xl font-bold text-gray-800"
         initial={{ opacity: 0, y: -20 }}
@@ -16,9 +16,9 @@ const NotFound = () => {
         className="text-xl text-gray-600 mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Oops! The page you're looking for doesn't exist.
+        Oops! The page you&apos;re looking for doesn&apos;t exist.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -27,8 +27,9 @@ const NotFound = () => {
       >
         <NavLink
           to="/"
+          aria-label="Go back to homepage"
           className="mt-6 px-6 py-3 text-white bg-indigo-600 rounded-md shadow-lg 
-                     hover:bg-indigo-700 transition-all"
+                     hover:bg-indigo-700 transition-all duration-300"
         >
           Go Back Home
         </NavLink>

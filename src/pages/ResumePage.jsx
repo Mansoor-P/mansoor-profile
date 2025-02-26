@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const ResumePage = () => {
   return (
@@ -7,9 +6,9 @@ const ResumePage = () => {
       <div className="p-4">
         <Link
           to="/"
-          className="no-underline text-blue-500 hover: flex items-center"
+          className="no-underline text-blue-500 hover:flex items-center"
         >
-          <span className="text-lg">←</span>{" "}
+          <span className="text-lg">←</span>
           <span className="ml-2">Back Home</span>
         </Link>
       </div>
@@ -51,7 +50,7 @@ const ResumePage = () => {
           <h2 className="text-xl font-semibold">Profile Summary</h2>
           <p className="text-gray-500 p-2 rounded-md">
             Enthusiastic MCA graduate skilled in{" "}
-            <span className="bg-green-200 font-semibold rounded  px-1">
+            <span className="bg-green-200 font-semibold rounded px-1">
               Java, Spring Boot, React.js, and Microservices
             </span>
             . Proficient in building REST APIs and familiar with cloud
@@ -68,15 +67,13 @@ const ResumePage = () => {
           <h2 className="text-xl font-semibold">Technical Skills</h2>
           <ul className="list-disc list-inside space-y-1">
             <li>
-              <span className="font-bold">Programming Languages:</span> C,
+              <span className="font-bold">Programming Languages:</span>{" "}
               <span className="bg-green-200 px-1 rounded">
-                {" "}
-                Java, JavaScript, SQL
+                Java, JavaScript, SQL, C
               </span>
             </li>
             <li>
               <span className="font-bold">Frontend Technologies:</span>{" "}
-              HTML/CSS,{" "}
               <span className="bg-blue-200 px-1 rounded">
                 React.js, Tailwind, Bootstrap
               </span>
@@ -95,19 +92,13 @@ const ResumePage = () => {
             </li>
             <li>
               <span className="font-bold">Development Tools:</span> Git, GitHub,
-              Postman, Docker-Desktop, IntelliJ IDEA, Eclipse
+              Postman, IntelliJ IDEA, Eclipse
             </li>
             <li>
               <span className="font-bold">Key Coursework:</span>{" "}
               <span className="bg-yellow-200 px-1 rounded">
-                Data Structures Algorithms, Database Management Systems (DBMS),
-                Operating Systems, Software Development Life Cycle (SDLC)
+                DSA, DBMS, OS, Networking, System Design, Agile Methodologies
               </span>
-              ,{" "}
-              <span className="bg-green-200 px-1 rounded">
-                System Design, Networking
-              </span>
-              , Agile Methodologies
             </li>
             <li>
               <span className="font-bold">Soft Skills:</span> Problem Solving,
@@ -130,59 +121,44 @@ const ResumePage = () => {
               📌 GATE CSE 2025 Aspirant
             </h3>
             <p className="mt-2 text-gray-700">
-              {"-> "}
-              <span className="font-semibold">GATE CSE 2025</span> with a focus
-              on{" "}
+              {"-> "} Focusing on{" "}
               <span className="font-semibold">
-                Data Structures, Algorithms, Operating Systems, DBMS, Computer
-                Networks,
-              </span>{" "}
-            </p>
-            <p className="mt-2 text-gray-700">
-              {" -> "} Strong foundation in{" "}
-              <span className="font-semibold">problem-solving</span> and{" "}
-              <span className="font-semibold">competitive programming.</span>
+                DSA, OS, DBMS, Computer Networks, System Design, Competitive
+                Programming
+              </span>
             </p>
           </div>
 
           {/* Academic Qualifications */}
           <div className="space-y-5">
-            {/* MCA */}
             <div>
               <h3 className="text-xl font-bold text-gray-900">
                 📌 Sri Venkateswara University
               </h3>
               <p className="text-gray-700">
-                Master of Computer Applications (MCA) -{" "}
-                <span className="font-semibold">8.2 CGPA</span>
+                MCA - <span className="font-semibold">8.2 CGPA</span>
               </p>
               <p className="text-sm text-gray-500">
                 2021–2023 | Tirupati, Andhra Pradesh
               </p>
             </div>
-
-            {/* BSc */}
             <div>
               <h3 className="text-xl font-bold text-gray-900">
                 📌 The Adoni Arts and Science College
               </h3>
               <p className="text-gray-700">
-                Bachelor of Science (BSc) -{" "}
-                <span className="font-semibold">8.0 CGPA</span>
+                BSc - <span className="font-semibold">8.0 CGPA</span>
               </p>
               <p className="text-sm text-gray-500">
                 2018–2021 | Adoni, Andhra Pradesh
               </p>
             </div>
-
-            {/* Senior Secondary */}
             <div>
               <h3 className="text-xl font-bold text-gray-900">
                 📌 Sri Sathya Sai Jr College
               </h3>
               <p className="text-gray-700">
-                Senior Secondary XII (MPC) -{" "}
-                <span className="font-semibold">93.1%</span>
+                XII (MPC) - <span className="font-semibold">93.1%</span>
               </p>
               <p className="text-sm text-gray-500">
                 2016–2018 | Anantapur, Andhra Pradesh
@@ -196,69 +172,38 @@ const ResumePage = () => {
         {/* Projects */}
         <section>
           <h2 className="text-xl font-semibold">Projects</h2>
-          <div className="space-y-4">
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="text-lg font-bold">
-                Job Company and Review Web App
-              </h3>
-              <p className="italic text-lg text-gray-700">
-                <span className=" font-bold">Tech Stack:</span> Java, Spring
-                Boot, Microservices, PostgreSQL, Docker, RabbitMQ, Zipkin
-              </p>
-              <div className="mt-4 text-gray-700">
-                <p>
-                  ✅ Developed a comprehensive Job Company and Review
-                  application using Java and Spring Boot, organized around a
-                  microservices architecture to achieve modular and scalable
-                  development.
-                </p>
-                <p>
-                  ✅ Designed and implemented RESTful APIs for managing job
-                  Designed and implemented RESTful APIs for managing job
-                  listings, application processes, and reviews, ensuring robust,
-                  secure, and efficient data handling.
-                </p>
-                <p>
-                  ✅ Integrated PostgreSQL with Docker for streamlined
-                  deployment, enhancing scalability and providing efficient data
-                  management.
-                </p>
-                <p>
-                  ✅ Employed RabbitMQ to facilitate asynchronous messaging
-                  between microservices, ensuring reliable communication and
-                  data flow.
-                </p>
-                <p>
-                  ✅ Utilized Zipkin for distributed tracing, allowing for
-                  effective monitoring and debugging of interactions across
-                  microservices.
-                </p>
-                <a
-                  href="https://github.com/Mansoor-P/jobsmicroservices"
-                  className="text-blue-500 hover:underline"
-                >
-                  GitHub Link
-                </a>
-              </div>
-            </div>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <h3 className="text-lg font-bold">
+              Job Company and Review Web App
+            </h3>
+            <p className="italic text-lg text-gray-700">
+              <span className="font-bold">Tech Stack:</span> Java, Spring Boot,
+              Microservices, PostgreSQL, Docker, RabbitMQ, Zipkin
+            </p>
+            <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
+              <li>
+                Developed a Job Company and Review app using Java, Spring Boot,
+                and Microservices.
+              </li>
+              <li>
+                Implemented RESTful APIs for managing job listings,
+                applications, and reviews.
+              </li>
+              <li>
+                Integrated PostgreSQL with Docker for efficient data management.
+              </li>
+              <li>
+                Used RabbitMQ for asynchronous messaging between microservices.
+              </li>
+              <li>Employed Zipkin for distributed tracing and monitoring.</li>
+            </ul>
+            <a
+              href="https://github.com/Mansoor-P/jobsmicroservices"
+              className="text-blue-500 hover:underline"
+            >
+              GitHub Link
+            </a>
           </div>
-        </section>
-
-        <hr className="my-4 border-gray-400" />
-
-        {/* Achievements */}
-        <section>
-          <h2 className="text-xl font-semibold">Achievements</h2>
-          <ul className="list-disc list-inside space-y-1">
-            <li>
-              Solved <span className="font-bold">250+ coding problems</span> on
-              LeetCode, CodeChef, and HackerRank.
-            </li>
-            <li>
-              Developed a Job Company and Review app using React, Spring Boot,
-              and Microservices.
-            </li>
-          </ul>
         </section>
       </div>
     </section>

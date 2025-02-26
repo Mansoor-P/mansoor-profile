@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import Project from "../models/Project.js"; // Add .js extension
+
 const router = express.Router();
-const Project = require("../models/Project");
 
 router.get("/api/projects", async (req, res) => {
   try {
@@ -12,4 +13,4 @@ router.get("/api/projects", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
