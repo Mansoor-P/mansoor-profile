@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
-import projectsData from "../data/projects"; // Importing static projects
+import projectsData from "../data/projects";
 
 const GithubProjects = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setProjects(projectsData);
-      setLoading(false);
-    }, 1000);
+    setProjects(projectsData);
   }, []);
 
   return (
@@ -19,19 +15,13 @@ const GithubProjects = () => {
         GitHub Projects
       </h1>
 
-      {loading ? (
+      {projects.length === 0 ? (
         <p className="text-center text-gray-500 text-lg">Loading projects...</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {projects.length > 0 ? (
-            projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))
-          ) : (
-            <p className="text-center text-gray-500 text-lg">
-              No projects available.
-            </p>
-          )}
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
         </div>
       )}
     </section>
