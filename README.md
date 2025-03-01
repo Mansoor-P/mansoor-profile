@@ -1,45 +1,31 @@
-
 # 🚀 Mansoor Portfolio
 
-**Version:** v1.0.0  
-A clean and responsive portfolio showcasing my projects.  
+**Version:** v2.0.0  
+A clean and responsive portfolio showcasing my projects.
+
+![Portfolio Screenshot](./src/assets/images/screenshots/1.png)
 
 ## 🔥 Features
-- 📌 Fetches portfolio projects from MongoDB
-- 🌎 Live demo available 
-- ⚡ Built using **React.js, Express.js, MongoDB**
-- 🎨 Fully responsive UI  
 
-## 🛠️ Technologies Used
-- **Frontend:** React, Tailwind CSS  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB (hosted on Atlas)  
-- **Deployment:** Vercel for frontend, Render for backend  
+- Fully responsive UI with Tailwind CSS
+- Built with **React.js**
+- Live demo available
 
-## 📂 Project Structure
-```
-📦 mansoor-portfolio  
- ┣ 📂 src *(React app, Tailwind CSS)*  
- ┣ 📂 server *(Node.js, Express, MongoDB)*  
- ┗ 📄 README.md
-```
+## 🛠️ Tech Stack
 
-## 🚀 Installation & Setup
+- **Frontend:** React, Tailwind CSS
+- **Deployment:** Vercel (Frontend), Render (Backend)
+
+## 🚀 Setup
+
 ```sh
 # Clone the repository
 git clone https://github.com/Mansoor-P/mansoor-profile.git
 
-# Install dependencies (Backend)
-cd server && npm install
-
-# Install dependencies (Frontend)
-cd src && npm install
+# Install dependencies
+cd mansoor-profile
+npm install
 
 # Run the project
 npm start
-```
-
----
-🔥 **Follow & Star** this repository if you find it helpful! 😊  
-📬 Contact me at: **mansoorpathikonda@gmail.com**
 ```
