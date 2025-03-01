@@ -260,7 +260,7 @@ const blogs = [
       },
       {
         type: "image",
-        url: "https://example.com/rest-api-architecture.png",
+        // url: "https://example.com/rest-api-architecture.png",
         caption: "Basic REST API Architecture",
       },
       {
@@ -334,7 +334,7 @@ const blogs = [
       },
       {
         type: "image",
-        url: "https://example.com/restful-api-resource-naming.png",
+        // url: "https://example.com/restful-api-resource-naming.png",
         caption: "Proper Resource Naming in REST APIs",
       },
       {
@@ -354,7 +354,7 @@ const blogs = [
       },
       {
         type: "image",
-        url: "https://example.com/api-versioning.png",
+        // url: "https://example.com/api-versioning.png",
         caption: "Different API Versioning Strategies",
       },
       {

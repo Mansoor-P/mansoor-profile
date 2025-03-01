@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -14,9 +14,13 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
       <Navbar />
+
+      {/* Scroll Restoration */}
       <ScrollToTop />
 
+      {/* Main Content */}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,6 +32,8 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

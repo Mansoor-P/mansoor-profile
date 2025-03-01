@@ -7,20 +7,3 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&display=swap');
 
 @import "tailwindcss";
-
-/* Dark Mode Variables */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-}
-
-.dark {
-  --bg-color: #070a12;
-  --text-color: #ffffff;
-}
-
-body {
-  @apply transition-colors duration-300;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
