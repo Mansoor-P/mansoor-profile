@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-// Ensure tagColors is defined inside the file
 const tagColors = [
   "bg-blue-200 text-blue-800",
   "bg-green-200 text-green-800",
@@ -35,7 +34,7 @@ const ProjectCard = ({
         <p className="text-gray-600 mt-2">{description}</p>
 
         {/* Tech Stack */}
-        {techStack?.length > 0 && (
+        {techStack.length > 0 && (
           <p className="mt-2 text-sm font-semibold text-gray-700">
             <span className="text-gray-900">Tech Stack:</span>{" "}
             <span className="text-gray-500">{techStack.join(", ")}</span>
@@ -50,12 +49,12 @@ const ProjectCard = ({
 
         {/* Tags with Colors */}
         <div className="mt-3 flex flex-wrap gap-2">
-          {tags?.length > 0 ? (
+          {tags.length > 0 ? (
             tags.map((tag, index) => (
               <span
                 key={index}
                 className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  tagColors[index % tagColors.length] // Ensure index is within bounds
+                  tagColors[index % tagColors.length]
                 }`}
               >
                 {tag}
@@ -75,7 +74,7 @@ const ProjectCard = ({
           transition={{ duration: 0.3 }}
           className="text-blue-500 font-semibold mt-4 inline-block"
         >
-          Git Hub Demo →
+          GitHub Demo →
         </motion.a>
       </div>
     </motion.div>

@@ -8,7 +8,7 @@ import mansoorImage from "../assets/mansoor.jpg";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Blogs", path: "/blogs" },
+  // { name: "Blogs", path: "/blogs" },
   { name: "Projects", path: "/github-projects" },
 ];
 

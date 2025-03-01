@@ -1,22 +1,16 @@
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
+import projectsData from "../data/projects"; // Importing static projects
 
 const GithubProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(Array.isArray(data) ? data : []); // Ensure it's an array
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Fetch Error:", err);
-        setProjects([]); // Prevent undefined issues
-        setLoading(false);
-      });
+    setTimeout(() => {
+      setProjects(projectsData);
+      setLoading(false);
+    }, 1000);
   }, []);
 
   return (
@@ -30,8 +24,8 @@ const GithubProjects = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {projects.length > 0 ? (
-            projects.map((project) => (
-              <ProjectCard key={project._id} {...project} />
+            projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
             ))
           ) : (
             <p className="text-center text-gray-500 text-lg">
