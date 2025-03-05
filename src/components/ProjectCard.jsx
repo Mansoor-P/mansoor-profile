@@ -23,16 +23,23 @@ const ProjectCard = ({
     whileTap={{ scale: 0.98 }}
     className="bg-white rounded-2xl shadow-lg overflow-hidden"
   >
-    <img src={image} alt={name} className="w-full h-56 object-cover" />
+    <img
+      src={image}
+      alt={name || "Project Image"}
+      className="w-full h-56 object-cover"
+    />
     <div className="p-5">
       <h3 className="text-2xl font-bold text-gray-900">{name}</h3>
       <p className="text-gray-600 mt-2">{description}</p>
+
       <p className="text-sm text-gray-700 mt-1">
-        <strong>Tech Stack:</strong> {techStack.join(", ")}
+        <span className="font-semibold">Tech Stack:</span>{" "}
+        {techStack.join(", ")}
       </p>
+
       <p className="text-sm font-semibold text-gray-700">
-        <strong>Category:</strong>{" "}
-        <span className="text-blue-500">{category}</span>
+        <span className="font-semibold">Category:</span>
+        <span className="text-blue-500"> {category}</span>
       </p>
 
       {/* Tags */}
@@ -54,8 +61,8 @@ const ProjectCard = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.05, color: "#3B82F6" }}
-        className="text-blue-500 font-semibold mt-4 inline-block"
+        whileHover={{ scale: 1.05 }}
+        className="text-blue-500 font-semibold mt-4 inline-block hover:underline"
       >
         GitHub Demo →
       </motion.a>
@@ -68,9 +75,9 @@ ProjectCard.propTypes = {
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  techStack: PropTypes.array.isRequired,
+  techStack: PropTypes.arrayOf(PropTypes.string).isRequired,
   category: PropTypes.string.isRequired,
-  tags: PropTypes.array.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ProjectCard;

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import mansoorImage from "../assets/mansoor.jpg";
 import Resume from "./Resume";
+
 const Hero = () => {
   return (
     <div className="mt-20 flex flex-col items-center text-center px-4">
@@ -28,30 +29,36 @@ const Hero = () => {
           <span className="text-indigo-500 font-semibold">
             Mansoor Pathikonda
           </span>
-          , a{" "}
+          , an{" "}
           <span className="text-blue-500 font-semibold">
             Aspiring Software Engineer
-          </span>{" "}
+          </span>
           specializing in{" "}
           <span className="bg-green-100 dark:bg-green-800 text-green-600 dark:text-green-300 px-2 rounded">
             Fullstack Development
           </span>
           .
         </p>
+
         <p>
           I have expertise in{" "}
-          {/* <span className="bg-pink-200 dark:bg-pink-800 text-pink-600 dark:text-pink-300 px-2 rounded"> */}
-          React Native, React.Js, Java, Spring Boot, Microservices, REST APIs,
-          and Databases
-          {/* </span> */}.
+          <span className="font-semibold text-gray-700 dark:text-gray-300">
+            React.js, React Native, Java, Spring Boot, Microservices, REST APIs,
+            and Databases
+          </span>
+          .
         </p>
+
         <p>
           Strong foundation in{" "}
-          {/* <span className="bg-blue-200 dark:bg-blue-800 text-blue-600 dark:text-blue-300 px-2 rounded"> */}
-          Problem-Solving and Competitive Programming
-          {/* </span> */}.
+          <span className="font-semibold text-gray-700 dark:text-gray-300">
+            Problem-Solving and Competitive Programming
+          </span>
+          .
         </p>
       </motion.div>
+
+      {/* Resume Button */}
       <Resume />
     </div>
   );
