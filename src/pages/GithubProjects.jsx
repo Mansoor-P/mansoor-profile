@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../data/projects";
 
 const GithubProjects = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    setProjects(projectsData);
-  }, []);
+  const [projects] = useState(projectsData); // No need for useEffect
 
   return (
     <section className="mt-24 min-h-screen px-6 max-w-6xl mx-auto">
