@@ -25,20 +25,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center bg-white/10 dark:bg-gray-900/70 backdrop-blur-lg border-b border-gray-400 dark:border-gray-700 z-50">
       {/* Logo */}
-      <NavLink to="/" className="flex items-center space-x-2">
-        <motion.img
-          src={mansoorImage}
-          alt="Mansoor"
-          className="w-12 h-12 rounded-full shadow-lg"
-          whileHover={{ scale: 1.1 }}
-        />
-        <span className="text-lg font-semibold text-indigo-700 dark:text-white">
-          Mansoor Pathikonda
-        </span>
+      <NavLink to="/" className="logo_name flex items-center space-x-2">
+        <span className="text-4xl  text-indigo-700 ">Mansoor</span>
       </NavLink>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex space-x-6 text-lg font-medium">
+      <ul className="nav_titles hidden md:flex space-x-6 text-lg font-medium">
         {navLinks.map(({ name, path }) => (
           <li key={path}>
             <NavLink
@@ -55,7 +47,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Toggle */}
       <button
-        className="md:hidden text-3xl text-gray-800 dark:text-white"
+        className="nav_titles md:hidden text-3xl text-gray-800 dark:text-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <FaTimes /> : <FaBars />}
