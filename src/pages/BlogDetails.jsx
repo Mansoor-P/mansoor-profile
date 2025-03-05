@@ -1,9 +1,14 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { marked } from "marked";
 import blogs from "../data/blogsData";
 
 const BlogDetails = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const blog = blogs.find((b) => b.slug === slug);
 
   useEffect(() => {
@@ -11,13 +16,14 @@ const BlogDetails = () => {
       document.title = `${blog.title} - Blog | VoxPost`;
     } else {
       document.title = "Blog Not Found | VoxPost";
+      setTimeout(() => navigate("/blogs"), 3000);
     }
-  }, [blog]);
+  }, [blog, navigate]);
 
   if (!blog) {
     return (
-      <div className="flex flex-col justify-center items-center h-screen px-4">
-        <p className="text-center text-gray-500 text-lg">
+      <div className="flex flex-col justify-center items-center h-screen px-4 text-center">
+        <p className="text-gray-500 text-lg">
           Oops! The blog you are looking for was not found.
         </p>
         <Link
@@ -30,14 +36,15 @@ const BlogDetails = () => {
     );
   }
 
-  // ✅ Function to render different content types, including bold text
+  // Function to render different content types
   const renderContent = (content) => {
     if (typeof content === "string") {
-      return content.split("\n").map((paragraph, index) => (
-        <p key={index} className="mb-4">
-          {paragraph}
-        </p>
-      ));
+      return (
+        <div
+          dangerouslySetInnerHTML={{ __html: marked(content) }}
+          className="prose lg:prose-lg text-gray-700 mt-4"
+        />
+      );
     }
 
     if (Array.isArray(content)) {
@@ -59,6 +66,7 @@ const BlogDetails = () => {
                 key={index}
                 src={block.url}
                 alt={block.alt}
+                loading="lazy"
                 className="my-4 w-full max-w-lg rounded-lg shadow-md"
               />
             );
@@ -76,12 +84,14 @@ const BlogDetails = () => {
             );
           case "code":
             return (
-              <pre
+              <SyntaxHighlighter
                 key={index}
-                className="bg-gray-900 text-white p-4 rounded-md my-4 overflow-x-auto"
+                language="javascript"
+                style={atomDark}
+                className="my-4 rounded-lg"
               >
-                <code>{block.value}</code>
-              </pre>
+                {block.value}
+              </SyntaxHighlighter>
             );
           default:
             return null;
@@ -94,6 +104,11 @@ const BlogDetails = () => {
 
   return (
     <div className="mt-20 max-w-4xl mx-auto px-4">
+      <Helmet>
+        <title>{`${blog.title} - Blog | VoxPost`}</title>
+        <meta name="description" content={blog.summary} />
+      </Helmet>
+
       {/* Back Button */}
       <div className="p-4">
         <Link
