@@ -205,6 +205,37 @@ const ResumePage = () => {
             </a>
           </div>
         </section>
+        {/* Article Posting Platform */}
+        <section>
+          <h2 className="text-xl font-semibold">Projects</h2>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <h3 className="text-lg font-bold">Article Posting Platform</h3>
+            <p className="italic text-lg text-gray-700">
+              <span className="font-bold">Tech Stack:</span> Java, Spring Boot,
+              Microservices, Spring Security, JWT, React, Tailwind CSS
+            </p>
+            <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
+              <li>
+                Developing a scalable article posting platform using Java and
+                Spring Boot with a microservices architecture.
+              </li>
+              <li>
+                Implementing authentication and role-based access control using
+                Spring Security and JWT.
+              </li>
+              <li>
+                Designing a responsive frontend using React and Tailwind CSS for
+                an improved user experience.
+              </li>
+            </ul>
+            <a
+              href="https://github.com/Mansoor-P/blog-application"
+              className="text-blue-500 hover:underline"
+            >
+              GitHub Link
+            </a>
+          </div>
+        </section>
       </div>
     </section>
   );
