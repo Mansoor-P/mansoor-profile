@@ -10,16 +10,26 @@ const Resume = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Link
-        to="/resume"
-        className="text-lg md:text-2xl font-semibold bg-gradient-to-r from-purple-500 to-indigo-600 text-white 
-        flex items-center gap-3 rounded-full px-6 py-3 shadow-lg 
-        backdrop-blur-md transition-all duration-300 ease-in-out 
-        hover:scale-105 hover:shadow-xl hover:from-indigo-600 hover:to-purple-500"
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="rounded-full shadow-lg"
       >
-        <RiPagesLine className="text-2xl md:text-3xl animate-pulse" />
-        View Resume
-      </Link>
+        <Link
+          to="/resume"
+          aria-label="View Resume"
+          className="
+            text-lg md:text-2xl font-semibold text-white 
+            flex items-center gap-3 px-6 py-3 rounded-full
+            bg-gradient-to-r from-purple-500 to-indigo-600
+            shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out
+            hover:shadow-xl hover:from-indigo-600 hover:to-purple-500
+          "
+        >
+          <RiPagesLine className="text-2xl md:text-3xl animate-pulse" />
+          View Resume
+        </Link>
+      </motion.div>
     </motion.div>
   );
 };
