@@ -14,13 +14,10 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Scroll Restoration */}
       <ScrollToTop />
 
-      {/* Main Content */}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,7 +30,6 @@ const App = () => {
         </Routes>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
