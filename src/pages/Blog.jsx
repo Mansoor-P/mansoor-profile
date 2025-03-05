@@ -6,9 +6,9 @@ import blogs from "../data/blogsData";
 // Blog Component
 const Blog = () => {
   return (
-    <div className="mt-20 max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
+    <div className="mt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
       <motion.h1
-        className="text-left text-3xl md:text-4xl font-bold"
+        className="text-center sm:text-left text-4xl md:text-4xl font-bold"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -16,13 +16,13 @@ const Blog = () => {
         All Blogs
       </motion.h1>
 
-      <div className="mt-4 border-t border-gray-300"></div>
+      <div className="mt-4 mb-4 border-t border-gray-300"></div>
 
       {/* Featured Blog */}
       {blogs.length > 0 && <BlogCard blog={blogs[0]} isFeatured />}
 
       {/* Blog Grid Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         {blogs.slice(1).map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
@@ -35,8 +35,8 @@ const Blog = () => {
 const BlogCard = ({ blog, isFeatured }) => {
   return (
     <motion.div
-      className={`mt-4 rounded-lg overflow-hidden shadow-lg ${
-        isFeatured ? "mb-10" : ""
+      className={`rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ${
+        isFeatured ? "mb-12" : ""
       }`}
       whileHover={{
         scale: 1.03,
@@ -46,9 +46,10 @@ const BlogCard = ({ blog, isFeatured }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
+      {/* Blog Header */}
       <div
-        className={`text-white text-center ${
-          isFeatured ? "py-40 sm:py-48" : "py-12"
+        className={`text-white text-center px-4 ${
+          isFeatured ? "py-32 sm:py-48" : "py-16"
         } ${
           isFeatured
             ? "bg-gradient-to-r from-blue-500 to-purple-600"
@@ -63,23 +64,31 @@ const BlogCard = ({ blog, isFeatured }) => {
           {blog.title}
         </h2>
       </div>
-      <div className="p-4 bg-white">
-        <p className="text-gray-600 text-sm sm:text-base">{blog.summary}</p>
-        <div className="flex items-center gap-2 mt-3">
+
+      {/* Blog Content */}
+      <div className="p-5 sm:p-6 bg-white">
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          {blog.summary}
+        </p>
+
+        {/* Author Section */}
+        <div className="flex items-center gap-3 mt-4">
           {blog.authorImg && (
             <img
               src={blog.authorImg}
               alt={blog.author}
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300"
             />
           )}
           <span className="text-sm text-gray-500">
             {blog.author} • {blog.date}
           </span>
         </div>
+
+        {/* Read More Link */}
         <Link
           to={`/blogs/${blog.slug}`}
-          className="text-blue-500 mt-3 block font-semibold hover:underline hover:text-blue-700 transition-all duration-300"
+          className="text-blue-500 font-semibold mt-4 block hover:underline hover:text-blue-700 transition-all duration-300"
         >
           Read More →
         </Link>
